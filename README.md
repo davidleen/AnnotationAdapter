@@ -88,7 +88,7 @@ repositories {
 </code>
 
 
-ps: this class use annotation,so it will cause some problem about proguard .
+ps: this package use annotation,so it will cause some problems about proguard .
 
 add the lines below to  proguard file will help.
 
