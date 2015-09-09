@@ -92,7 +92,7 @@ repositories {
 
 ps: this class use annotation,so it will cause some problem about proguard .
 
-add the lines below to  proguard-project.txt will help.
+add the lines below to  proguard file will help.
 
 <code>
 
