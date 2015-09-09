@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 
+import com.giants3.android.annotatableadapter.AbstractAdapter;
 import com.giants3.android.annotatableadapter.ResId;
 import com.giants3.android.annotatableadapter.UnMixable;
 import com.giants3.android.annotatableadapter.ViewUtil;
@@ -46,6 +47,19 @@ public class MainActivity extends Activity {
 		holder.simpleViewType.setAdapter(new SimpleAdapter(this,
 				datas));
 
+
+
+
+		holder.simpleViewType.setAdapter(new AbstractAdapter<Card>(this,
+				datas)
+		{
+
+
+			@Override
+			protected UnMixable createViewHolder(int itemViewType) {
+				return new SimpleAdapter.NumberTypeBinder() ;
+			}
+		} );
 	}
 
 }

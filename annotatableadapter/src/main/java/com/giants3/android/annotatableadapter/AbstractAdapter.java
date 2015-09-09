@@ -14,7 +14,6 @@ import java.util.List;
  * easy on use baseAdapter
  * 
  * @author davidleen29
- * @创建时间 2013年11月14日
  * @param <D>
  */
 public abstract class AbstractAdapter<D> extends BaseAdapter {
@@ -81,6 +80,17 @@ public abstract class AbstractAdapter<D> extends BaseAdapter {
 	}
 
 
+	public void appendData(List<D> appendData)
+	{
+		 appendData(appendData,true);
+	}
+	public void appendData(List<D> appendData,boolean notifyChanged)
+	{
+		datas.addAll(appendData);
+		if(notifyChanged)
+			notifyDataSetChanged();
+	}
+
 	/**
 	 * get the binder base on viewType;
 	 * 获取对应itemType的控件集合绑定工具
@@ -114,7 +124,7 @@ public abstract class AbstractAdapter<D> extends BaseAdapter {
 	/**
 	 * a bindable interface with a bindData method
 	 * 数据绑定类 包含绑定的控件成员 绑定方法。
-	 * 
+	 *
 	 * @author davidleen29
 	 * @创建时间 2013年11月13日
 	 * @param <D>

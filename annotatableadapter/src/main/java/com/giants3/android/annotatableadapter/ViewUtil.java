@@ -1,21 +1,21 @@
 package com.giants3.android.annotatableadapter;
 
+import java.lang.reflect.Field;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import java.lang.reflect.Field;
-
 /**
  * a helper class
- * 
+ *
  * use java reflect to inject view to the obj whose member has the same name to
  * the subViewId(R.id.name)
  * 利用java反射功能 执行控件注射
- * 
+ *
  * @author davidleen29
- * 
+ *
  */
 
 public class ViewUtil {
@@ -27,7 +27,7 @@ public class ViewUtil {
 	 *
 	 *
 	 *	根据配置的对象  自动生成View工具。
-	 * 
+	 *
 	 * @param obj
 	 *            所传递的对象 必须实现UnMixable接口 以避免代码混搅过程中 影响java 反射功能使用。
 	 * @param context
@@ -41,11 +41,11 @@ public class ViewUtil {
 		{
 			//throw new exception
 			Log.e(TAG,
-			"class:"
-					+ aClass
+					"class:"
+							+ aClass
 
 
-					+ "  no found the relative layout id for the viewId    ");
+							+ "  no found the relative layout id for the viewId    ");
 			return null;
 		}
 
@@ -72,7 +72,7 @@ public class ViewUtil {
 	public  static void injectByFieldAnnotate(Object object,View v)
 	{
 
-			injectByFieldAnnotate(object,object.getClass(),v);
+		injectByFieldAnnotate(object,object.getClass(),v);
 
 	}
 
@@ -117,7 +117,7 @@ public class ViewUtil {
 											+ v
 											+ " ,does not  have the childView which id equals:["
 											+ id+
-										  "]" );
+											"]" );
 					} else
 						try {
 							field.set(obj, fieldView);

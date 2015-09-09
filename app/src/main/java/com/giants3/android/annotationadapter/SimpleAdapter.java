@@ -37,10 +37,9 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 	}
 
 	/**
-	 * number type view binder
-	 * 
 	 * @author davidleen29
 	 * @创建时间 2013年11月14日
+	 * this class must annotate with layout id
 	 */
    @ResId(R.layout.list_item_number_type)
 	public static class NumberTypeBinder implements Bindable<Card> {
@@ -48,17 +47,16 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 		public NumberTypeBinder() {
 		}
 
-		//here  use reflect ,
-		//make this memeber name with the same name to the viewId defined in the item layout
-		// like:   android:id="@+id/cardType"
-		// optional choice: use roboguice do the inject work with its annotation.
+		//annotate with viewId
 		@ResId(R.id.cardType)
 		TextView cardType;
-
+		//more can define below
 		@Override
 		public void bindData(AbstractAdapter<Card> adapter,Card data, int position) {
 			// here do all your bind obj
 			cardType.setText(data.toString());
+
+			//more bind works....
 		}
 
 	}

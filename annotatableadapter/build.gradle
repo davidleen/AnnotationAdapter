@@ -38,9 +38,15 @@ dependencies {
 
 
 // 根节点添加
-def siteUrl = 'https://github.com/davidleen/FaceFlip'    // project homepage
-def gitUrl = 'https://github.com/davidleen/FaceFlip.git' // project git
+def siteUrl = 'https://github.com/davidleen/AnnotationAdapter'    // project homepage
+def gitUrl = 'https://github.com/davidleen/AnnotationAdapter.git' // project git
 
+
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
 
 
 // 根节点添加
@@ -75,19 +81,40 @@ install {
     }
 }
 
+
+
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
 
+
+
+
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
+    classpath += configurations.compile
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
+
+
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+        title "test"
+    }
+}
+
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
+
 }
 
 artifacts {
@@ -97,15 +124,13 @@ artifacts {
 
 
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "mylibrary"                // project name in jcenter
+        name = "annotatableadapter"                // project name in jcenter
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
