@@ -68,6 +68,8 @@ no findview  no getTag now
 
 adapter for multitype is similar. 
 
+just define some Bindable class ,and return them according to itemViewType
+
 
 
 
