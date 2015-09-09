@@ -76,6 +76,7 @@ how to use it:
 <code>
 
 //repository
+
 repositories {
         jcenter()
     }
@@ -90,6 +91,7 @@ repositories {
 
 
 ps: this class use annotation,so it will cause some problem about proguard .
+
 add the line below to  proguard-project.txt will help.
 
 
