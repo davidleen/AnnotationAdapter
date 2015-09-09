@@ -11,6 +11,7 @@ a helper to reduce the code in creating android adapter
  * @author davidleen29
  * @创建时间 2013年11月14日
  */ 
+
 public class SimpleAdapter extends AbstractAdapter<Card> { 
 	public SimpleAdapter(Context context) {
 		super(context); 
@@ -30,6 +31,7 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 	 * @创建时间 2013年11月14日 
 	 * this class must annotate with layoutId 
 	 */
+
 	 @ResId(R.layout.list_item_number_type)
 
 	public static class NumberTypeBinder implements Bindable<Card> {
