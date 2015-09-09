@@ -13,6 +13,7 @@ a helper to reduce the code in creating android adapter
  */
 
 public class SimpleAdapter extends AbstractAdapter<Card> { 
+
 	public SimpleAdapter(Context context) {
 		super(context); 
 	}
@@ -64,5 +65,11 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 this simple adapter  let you focus on the view And Data bindwork。
 
 no findview  no getTag now
+
+adapter for multitype is similar. 
+
+
+
+
 
 
