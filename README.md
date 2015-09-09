@@ -92,8 +92,18 @@ repositories {
 
 ps: this class use annotation,so it will cause some problem about proguard .
 
-add the line below to  proguard-project.txt will help.
+add the lines below to  proguard-project.txt will help.
 
+<code>
+
+  -keep interface com.nd.hairdressing.UnMixable
+  
+ -keepclassmembernames class * implements com.nd.hairdressing.UnMixable
+ {
+	*;
+ }
+ 
+</code>
 
 
 
