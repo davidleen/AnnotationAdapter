@@ -71,6 +71,26 @@ adapter for multitype is similar.
 just define some Bindable class ,and return them according to itemViewType
 
 
+how to use it:
+
+<code>
+
+//repository
+repositories {
+        jcenter()
+    }
+    
+    
+    
+    
+    // add  dependency
+     compile 'com.giants3.android:annotatableadapter:1.0'
+
+</code>
+
+
+ps: this class use annotation,so it will cause some problem about proguard .
+add the line below to  proguard-project.txt will help.
 
 
 
