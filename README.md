@@ -5,9 +5,7 @@ a helper to reduce the code in creating android adapter
  
 <code>
 /**
- * a sample adapter without multi viewType
- * just ignore the param itemViewType;
- * 
+ * a sample adapter   
  * @author davidleen29
  * @创建时间 2013年11月14日
  */
