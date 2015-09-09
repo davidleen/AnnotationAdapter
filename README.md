@@ -31,6 +31,7 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 	 * this class must annotate with layoutId 
 	 */
 	 @ResId(R.layout.list_item_number_type)
+
 	public static class NumberTypeBinder implements Bindable<Card> {
 
 		public NumberTypeBinder() {
@@ -38,12 +39,14 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 		//annotate with viewId 
 		@ResId(R.id.cardType)
 		TextView cardType;
+		
 		//more can define below
 
 		@Override
 		public void bindData(AbstractAdapter<Card> adapter,Card data, int position) {
 			// here do all your bind obj
 			cardType.setText(data.toString());
+			
 			//more bind works....
 		}
 
@@ -57,6 +60,7 @@ public class SimpleAdapter extends AbstractAdapter<Card> {
 
 
 this simple adapter  let you focus on the view And Data bindwork。
+
 no findview  no getTag now
 
 
