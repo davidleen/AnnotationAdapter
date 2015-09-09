@@ -10,7 +10,7 @@ a helper to reduce the code in creating android adapter
  * 
  * @author davidleen29
  * @创建时间 2013年11月14日
- */ 
+ */
 public class SimpleAdapter extends AbstractAdapter<Card> { 
 	public SimpleAdapter(Context context) {
 		super(context); 
