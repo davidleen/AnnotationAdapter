@@ -1,0 +1,8 @@
+//
+//apply plugin: 'maven-publish'
+//task  testProjectInfo(){
+//
+//    println  "测试project 参数============${project.url}"
+//    println  "project.getName()============${project.getName()}"
+//    println  "android.defaultConfig.versionName============${project.android.defaultConfig}"
+//}
