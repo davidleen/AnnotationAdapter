@@ -1,1 +1,4 @@
-include ':app', ':annotatableadapter'
+//include ':app'
+//        include     ':annotatableadapter',
+
+                include         ':mylibrary'
